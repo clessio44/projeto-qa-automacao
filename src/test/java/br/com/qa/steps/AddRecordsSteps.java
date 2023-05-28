@@ -2,7 +2,7 @@ package br.com.qa.steps;
 
 import org.openqa.selenium.WebDriver;
 
-import br.com.qa.pages.AddRecoveryPage;
+import br.com.qa.pages.AddRecordsPage;
 import br.com.qa.utils.DriverClass;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -11,11 +11,11 @@ import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 
-public class TestSteps {
+public class AddRecordsSteps {
 
 	private WebDriver driver;
 	
-	AddRecoveryPage add;
+	AddRecordsPage add;
 	DriverClass dr = new DriverClass();
 	
 	@Before
@@ -32,14 +32,14 @@ public class TestSteps {
 
 	@Dado("que acesso o sistema")
 	public void que_acesso_o_sistema() throws Exception {
-		add = new AddRecoveryPage(driver);
+		add = new AddRecordsPage(driver);
 		add.acionandoSelectV4Theme();
 		add.addRecord();
 	}
 
 	@Quando("realizo o cadastro")
 	public void realizo_o_cadastro() throws Exception {
-		add = new AddRecoveryPage(driver);
+		add = new AddRecordsPage(driver);
 		add.customerName();
 		add.contactLastName();
 		add.contacFirstName();
@@ -64,7 +64,7 @@ public class TestSteps {
 
 	@E("que realizei a primeira etapa de cadastro")
 	public void que_realizei_a_primeira_etapa_de_cadastro() throws Exception {
-		add = new AddRecoveryPage(driver);
+		add = new AddRecordsPage(driver);
 		add.customerName();
 		add.contactLastName();
 		add.contacFirstName();

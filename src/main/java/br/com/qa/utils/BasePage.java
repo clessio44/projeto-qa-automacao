@@ -86,7 +86,7 @@ public class BasePage {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
 		String format = formatter.format(LocalDateTime.now());
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrFile, new File("Evidences/"+  titulo + format + ".png"));
+		FileUtils.copyFile(scrFile, new File("Evidences/"+ "/"+format+"/"+  titulo + format + ".png"));
 	}
 
 }
