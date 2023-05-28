@@ -13,9 +13,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.qa.utils.BasePage;
 
-public class AddRecoveryPage {
+public class AddRecordsPage {
 
-	public AddRecoveryPage(WebDriver driver) {
+	public AddRecordsPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
