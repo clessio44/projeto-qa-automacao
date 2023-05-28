@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/features/Test.feature",
+		features = "src/test/resources/features/AddRecords.feature",
 		glue = "br.com.qa.steps",
 		tags = "@tag1",
 		plugin = "pretty",
