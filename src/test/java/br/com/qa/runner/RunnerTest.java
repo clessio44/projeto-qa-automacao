@@ -8,9 +8,9 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/features/AddRecords.feature",
+		features = "classpath:features",//src/test/resources/features/TestApiHunter.feature
 		glue = "br.com.qa.steps",
-		tags = "@tag1",
+		tags = "@ct011",
 		plugin = "pretty",
 		monochrome = true,
 		snippets = SnippetType.CAMELCASE,

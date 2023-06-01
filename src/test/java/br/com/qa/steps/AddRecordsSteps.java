@@ -18,20 +18,22 @@ public class AddRecordsSteps {
 	AddRecordsPage add;
 	DriverClass dr = new DriverClass();
 	
-	@Before
+	@Before()
     public void beforeScenario() throws InterruptedException{
-		System.out.println("This will run before the Scenario");
-		driver = dr.initDriver();
+		System.out.println("Iniciando...");
+		System.out.println();
+		
     }	
 	
 	@After
     public void afterScenario(){
-        System.out.println("This will run after the Scenario");
+        System.out.println("Finalizando...");
         dr.closeDriver();
     }
 
 	@Dado("que acesso o sistema")
 	public void que_acesso_o_sistema() throws Exception {
+		driver = dr.initDriver();
 		add = new AddRecordsPage(driver);
 		add.acionandoSelectV4Theme();
 		add.addRecord();
