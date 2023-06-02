@@ -88,5 +88,6 @@ public class BasePage {
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(scrFile, new File("Evidences/"+ "/"+format+"/"+  titulo + format + ".png"));
 	}
+	
 
 }
