@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(
 		features = "classpath:features",//src/test/resources/features/TestApiHunter.feature
 		glue = "br.com.qa.steps",
-		tags = "@ct018",
+		tags = "@ct023",
 		plugin = "pretty",
 		monochrome = true,
 		snippets = SnippetType.CAMELCASE
