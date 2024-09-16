@@ -7,7 +7,7 @@ import io.restassured.http.ContentType;
 
 public class TestApiCgitarPage {
 	
-	String url = "http://165.227.93.41/cgitar";
+	String url = "http://165.227.93.41/cgitar";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 	String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvaWQiOiIxMDQxIiwidXN1YXJpb25vbWUiOiJDbGVzc2lvIFNpbHZhIiwidXN1YXJpb2VtYWlsIjoiY2xlc3Npb3NpbHZhNDRAZ21haWwuY29tIiwidXN1YXJpb3RlbGVmb25lIjoiMTE5NjE4MDY4OTQifQ.DRoNy1UVxv-hqbuj6mqUIAqvdaQUHJms_JIxmTxXiHY";
 	String endpointUser = "/usuarios";
 	String endpointAutent = "/autenticacao";
@@ -54,8 +54,8 @@ public class TestApiCgitarPage {
 		;
 	}
 	
-	public String deveBuscarUmaPergunta() {	
-		String pergunta = RestAssured.given()
+	public void deveBuscarUmaPergunta() {	
+		RestAssured.given()
 			.header("token", token)
 			.log().all()
 			.contentType(ContentType.JSON)
@@ -67,7 +67,6 @@ public class TestApiCgitarPage {
 			.statusCode(200)
 			.extract().path("perguntaId", "perguntaDescricao")
 			;	
-		return pergunta;
 	}
 	
 	public void deveResponderUmaPergunta(){
@@ -76,10 +75,17 @@ public class TestApiCgitarPage {
 			map.put("perguntaId", "17");
 			map.put("respostaDada", "true");
 				
-			RestAssured.given().header("token", token).log().all().contentType(ContentType.JSON).body(map)
-					.when()
-						.post(url + endpointResp)
-					.then().log().status().log().body().statusCode(201);
+			RestAssured.given()
+				.header("token", token)
+				.log().all()
+				.contentType(ContentType.JSON)
+				.body(map)
+			.when()
+				.post(url + endpointResp)
+			.then()
+				.log().status()
+				.log().body()
+				.statusCode(201);
 	
 			map.put("perguntaId", "20");
 			map.put("respostaDada", "true");

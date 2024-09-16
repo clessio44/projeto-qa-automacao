@@ -33,7 +33,7 @@ public class AddRecordsSteps {
 
 	@Dado("que acesso o sistema")
 	public void que_acesso_o_sistema() throws Exception {
-		driver = dr.initDriver();
+		driver = dr.initDriver("https://www.grocerycrud.com/v1.x/demo/my_boss_is_in_a_hurry/bootstrap");
 		add = new AddRecordsPage(driver);
 		add.acionandoSelectV4Theme();
 		add.addRecord();

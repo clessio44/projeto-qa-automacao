@@ -5,7 +5,6 @@ import io.cucumber.java.pt.Dado;
 
 public class TestApiCgitarSteps {
 	
-	
 	@Dado("que envio uma request para criar um user na api cgitar")
 	public void que_envio_uma_request_para_criar_um_user_na_api_cgitar() {
 		TestApiCgitarPage cg = new TestApiCgitarPage();
